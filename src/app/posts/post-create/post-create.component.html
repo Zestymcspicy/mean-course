@@ -8,9 +8,14 @@
         ngModel
         required
         minlength="3"
+        placeholder="Post Title"
         #title="ngModel">
       <mat-error *ngIf="title.invalid">Please enter a post title.</mat-error>
     </mat-form-field>
+    <div>
+      <button mat-stroke-button type="button" (click)="filePicker.click()">Pick Image</button>
+      <input type="file" #filePicker>
+    </div>
     <mat-form-field>
       <textarea
         matInput
@@ -18,6 +23,7 @@
         name="content"
         ngModel
         required
+        placeholder="Post Content"
         #content="ngModel"></textarea>
       <mat-error *ngIf="content.invalid">Please enter a post title.</mat-error>
     </mat-form-field>
